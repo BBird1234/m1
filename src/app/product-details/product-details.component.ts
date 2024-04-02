@@ -18,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
   image:string="";
   pid = 2;
   public productdata: any;
+  getProducts: any;
 
 
   constructor(
@@ -41,12 +42,8 @@ export class ProductDetailsComponent implements OnInit {
       this.pcoin = this.productdata.pcoin
       this.description = this.productdata.description
       this.image=this.productdata.image
-
-      
-      
-
     })
   }
-
+  
 
 }

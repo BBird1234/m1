@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LandingComponent implements OnInit {
   abc: any;
   public getproduct: any[] = [];
+  getAllProduct: any;
+ 
 
   constructor(
     private httpClient: HttpClient,
@@ -33,10 +35,16 @@ export class LandingComponent implements OnInit {
   searchText: string = ''; 
 
   onSearchTextEntered(searchValue: string){
-    this.searchText=searchValue;
+    this.searchText=searchValue; 
     console.log( this.searchText);
     
-
   }
 
+  deleteProduct(pid: number) {
+    console.log(pid); // Check if the correct PID is being passed
+    this.productService.deleteProduct(pid).subscribe((res) => {
+      console.log(res); // Verify the response from the delete operation
+      this.getAllProduct(); // Corrected method name
+    });
+  }
 }

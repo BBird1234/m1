@@ -1,24 +1,28 @@
-
-    <div class="content"  style="margin-top: -4rem;">
+    <div class="content">
       <app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
-    
-     
-      <!-- <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2%"> -->
-        <div fxLayout="row wrap" fxLayoutAlign="left" fxLayoutGap="1%">
-          <ng-container *ngFor="let a of getproduct " >
-            <mat-card (click)="goToProduct(a.pid)" class="example-card col-lg-2.5"  *ngIf="searchText==='' || a.pname.toLowerCase().includes(searchText)" >
-              <img mat-card-image [src]="a.image" style="height:15rem;">
-                <mat-card-content>
-                  <div class="addres_data1"> 
-                <p>{{a.pname}}</p>
-                <p class="pricetext">GH₵: {{ a.pcoin }}.00</p> </div>
-                <div class="addres_data"> 
-                  <p>{{a.pcity}}</p>
-                  <p>{{a.pdatepost.substring(0,10)}}</p>
+      <div class="background"></div>
+      <div class="background-texture"></div>
+      <section class="carousel">
+       <div class="carousel__container">
+        <ng-container *ngFor="let a of getproduct "> 
+          <div class="carousel-item" *ngIf="searchText==='' || a.pname.toLowerCase().includes(searchText)">
+            
+               
+              <img class="carousel-item__img" [src]="a.image" >
+               
+              <div class="carousel-item__details">
+                <div class="controls">
+                  <span (click)="goToProduct(a.pid)"><i class="fa-solid fa-clipboard-list"></i></span>
+                  <span (click)="deleteProduct(a.pid)"> - <i class="fa-solid fa-trash-can"></i></span>
                 </div>
-              </mat-card-content>
-            </mat-card> </ng-container>
-      </div>
-    </div>
+                <h5 class="carousel-item__details--title">{{a.pname}}</h5>
+                <h6 class="carousel-item__details--subtitle">GH₵: {{a.pcoin}}.00, {{a.pcity}}</h6>
+              </div>
+            </div> 
+         
+          </ng-container> </div>
+          
+   </section> </div>
   
 
+ 

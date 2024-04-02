@@ -1,8 +1,56 @@
 .nav{
     background: #798c8c;
-    margin-bottom: 5px;
+ 
 }
 
 .btn{
     background-color: #D0D9D4;
 }
+
+.navbar-brand{
+font-family: 'Montserrat', sans-serif;
+color: aliceblue;
+font-size: 1.5rem;}
+
+/* .lists{
+  
+    height:60px;
+    text-align: center;
+    background-color: #798c8c;
+    margin-bottom: 5px;
+}
+
+.mp{
+    width:120px;
+    position: absolute;
+    border-right: solid;
+   border-left: solid;
+   left: 25%;
+   }
+.fashion{
+    width:100px;
+    position: absolute;
+    border-right: solid;
+    left: 33%;
+}
+.electronics{
+    width:100px;
+    position: absolute;
+    border-right: solid;
+    left: 41%;
+}
+
+.furniture{
+    width:100px;
+    position: absolute;
+    border-right: solid;
+    left: 49%;
+}
+
+.cars{
+   
+    width:100px;
+    position: absolute;
+    border-right: solid;
+    left: 57%;
+} */

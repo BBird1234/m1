@@ -8,12 +8,18 @@ import { Product } from '../model/product';
 })
 export class ProductService {
 
-  baseUrl = "https://ecoms-k1f4.onrender.com"
+  // baseUrl = "https://ecoms-k1f4.onrender.com"
+  baseUrl = "http://localhost:8081"
 
   constructor(private httpClient: HttpClient) { }
 
   public addProduct1(productObject: any) {
     return this.httpClient.post<Product>(this.baseUrl + "/add", productObject);
+  }
+
+  public deleteProduct(pid:any){
+
+    return this.httpClient.delete<Product>(this.baseUrl + "/product/"+ pid);
   }
   
   public getProductById(pid:any){

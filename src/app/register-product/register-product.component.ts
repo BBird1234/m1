@@ -4,6 +4,7 @@ import { Product } from '../model/product';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductService } from '../service/product.service';
 import { Observable, Subscriber } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface Fruit {
   name: string;
@@ -23,7 +24,7 @@ export class RegisterProductComponent implements OnInit {
   // ==========================================
 
 
-  constructor(private _snackBar: MatSnackBar,
+  constructor(private _snackBar: MatSnackBar,private router: Router,
     private productService: ProductService) {
     this.productForm = new FormGroup({
       pcategory: new FormControl("", [Validators.required]),
@@ -81,9 +82,11 @@ export class RegisterProductComponent implements OnInit {
       this.productService.addProduct1(this.productObj).subscribe(data =>
 
         console.log(data)
+        
       )
       // To reset the form
-     this.productForm.reset();
+    //  this.productForm.reset();
+     this.router.navigateByUrl('');
     } else {
       this.popup('Input error', 'Retry');
     }
