@@ -1,0 +1,24 @@
+
+    <div class="content"  style="margin-top: -4rem;">
+      <app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
+    
+     
+      <!-- <div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2%"> -->
+        <div fxLayout="row wrap" fxLayoutAlign="left" fxLayoutGap="1%">
+          <ng-container *ngFor="let a of getproduct " >
+            <mat-card (click)="goToProduct(a.pid)" class="example-card col-lg-2.5"  *ngIf="searchText==='' || a.pname.toLowerCase().includes(searchText)" >
+              <img mat-card-image [src]="a.image" style="height:15rem;">
+                <mat-card-content>
+                  <div class="addres_data1"> 
+                <p>{{a.pname}}</p>
+                <p class="pricetext">GH₵: {{ a.pcoin }}.00</p> </div>
+                <div class="addres_data"> 
+                  <p>{{a.pcity}}</p>
+                  <p>{{a.pdatepost.substring(0,10)}}</p>
+                </div>
+              </mat-card-content>
+            </mat-card> </ng-container>
+      </div>
+    </div>
+  
+

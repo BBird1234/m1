@@ -1,0 +1,85 @@
+<body>
+  <div class="container">
+
+
+    <mat-card class="example-card-header mb-2">
+      <p class="header-card-text">Add Product</p>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <div class="row">
+          <form [formGroup]="productForm">
+
+            <div class="row">
+              <label class="col-2 label">Product Name</label>
+              <mat-form-field class="col-10" appearance="outline">
+                <mat-label>Product Name</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="pname">
+              </mat-form-field>
+
+              <label class="col-md-2 label">Category</label>
+              <mat-form-field class="col-md-3" appearance="outline">
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="pcategory" ngDefaultControl>
+                  <div>
+                    <mat-option value="Mobiles">Mobiles</mat-option>
+                    <mat-option value="Automobiles">Automobiles</mat-option>
+                    <mat-option value="Electronics">Electronics</mat-option>
+                    <mat-option value="Fashion">Fashion</mat-option>
+                    <mat-option value="Appliances">Appliances</mat-option>
+                    <mat-option value="Furnitures">Furnitures</mat-option>
+                  </div>
+                </mat-select>
+              </mat-form-field>
+
+              <label class="col-md-3 label">Location</label>
+              <mat-form-field class="col-md-4" appearance="outline">
+                <mat-label><i class="fa-solid fa-location-dot" style="margin-right: 0.5rem;"> </i>Place
+                </mat-label>
+                <mat-select formControlName="pcity" ngDefaultControl>
+                  <mat-option value="Accra">Accra</mat-option>
+                  <mat-option value="Takoradi">Takoradi</mat-option>
+                  <mat-option value="Kumasi">Kumasi</mat-option>
+                  <mat-option value="Cape Coast">Cape Coast</mat-option>
+                  <mat-option value="Sunyani">Sunyani</mat-option>
+                  <mat-option value="Tamale">Tamale</mat-option>
+                  <mat-option value="Ho">Ho</mat-option>
+                  <mat-option value="Koforidua">Koforidua</mat-option>
+                
+                </mat-select>
+              </mat-form-field>
+
+              <label class="col-md-2 label">Description</label>
+              <mat-form-field class="col-md-10" appearance="outline">
+                <textarea formControlName="description" matInput></textarea>
+              </mat-form-field>
+
+
+              <label class="col-2 label">Price</label>
+              <mat-form-field class="col-3" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input formControlName="pcoin" matInput placeholder="Placeholder">
+              </mat-form-field>
+              <label class="col-md-3 label">Add Image</label>
+              <div class="col-md-4 mt-3">
+                <!-- <input type="file" (change)="handleFileInput($event.target['files'])" formControlName="image"/> -->
+                <input type="file" (change)="onChange($event)" formControlName="image"/>
+            <img [src]="myImage" alt="image" class="show-img">
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="button">
+      <button class="btn Home" mat-raised-button style="background: #ed6b0d" routerLink="/">
+        Home
+      </button>
+      <button class="btn" (click)="onClickSubmitForm()" mat-raised-button style="background: #43db52">
+        Add
+      </button>
+    </div>
+  </div>
+
+</body>

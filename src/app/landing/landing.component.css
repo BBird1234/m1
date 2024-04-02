@@ -1,0 +1,144 @@
+.product-grid {
+
+    margin-top: -1rem;
+
+}
+
+.first-product-grid {
+
+    height: 10rem;
+}
+
+.second-product-grid {
+    height: 15rem;
+}
+
+.First_row {
+    display: flex;
+    justify-content: space-evenly;
+    width: 1200px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.box img {
+    width: 250px;
+}
+
+.box image:hover {
+    border: 2px solid rgb(233, 80, 10);
+}
+
+
+.box {
+    border: 1px solid rgb(8, 236, 236);
+    width: 260px;
+    min-height: 270px;
+    cursor: pointer;
+}
+
+.box:hover {
+    border: 2px solid rgb(81, 7, 155);
+}
+
+.box a {
+    text-decoration: none;
+    color: black;
+}
+
+.box h4 {
+    padding: 4px 0 0 20px;
+}
+
+.box p {
+    padding: 0 0 10px 20px;
+    color: #6f8a94;
+    font-size: 14px;
+}
+
+.addres_data {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.addres_data1 {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.pricetext{
+    font-size: 15px;
+    color: #59554C;
+    
+}
+
+.addres_data p {
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+#lode_more_products_id {
+    display: none;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* .example-card {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    border: 1px solid rgb(8, 236, 236);
+    margin-top: 12px;
+}
+
+@media screen and (min-width: 600px) {
+    .example-card {
+        grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .example-card {
+        grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    }
+} */
+
+
+/* .example-card {
+    width: 23% ;
+    border: 1px solid rgb(8, 236, 236);
+    margin-top: 12px;
+} */
+
+/* mediaqueries */
+/* @media(max-width: 1028px) { 
+    .example-card {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        border: 1px solid rgb(236, 31, 8);
+        margin-top: 12px;
+    }
+
+ }  */
+.example-card:hover {
+    border: 2px solid #59554C;
+    
+}
+
+.example-card {
+    /* color: #F2EFDF;  #798C8C*/
+    border: 1px solid #798C8C;
+    background-color: #F2EFDF;
+    margin-bottom: 7px;
+}
+
+
+.content {
+    padding: 16px;
+    align-items: flex-start;
+    margin-left: 25px;
+    margin-top: 5px;
+}
