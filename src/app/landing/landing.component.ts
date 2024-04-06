@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../service/product.service';
 import { Router } from '@angular/router';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @Component({
   selector: 'app-landing',
@@ -12,6 +13,12 @@ export class LandingComponent implements OnInit {
   abc: any;
   public getproduct: any[] = [];
   getAllProduct: any;
+  public popoverTitle:string = 'Popover title';
+  public popoverMessage:string = 'Popover description';
+  public confirmClicked:boolean = false;
+  public cancelClicked:boolean = false;
+
+  
  
 
   constructor(

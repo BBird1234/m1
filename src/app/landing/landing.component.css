@@ -83,7 +83,7 @@ body {
   }
   
   .carousel__container:hover .carousel-item {
-    opacity: 0.3;
+    opacity:0.9;
   }
   
   .carousel__container:hover .carousel-item:hover {
@@ -132,7 +132,7 @@ body {
     width: 10px;
     height: 10px;
     font-size: 0.9rem;
-    color: #2ecc71;
+    color: #ff0101;
 
     /* background-color: white; */
   }
@@ -147,3 +147,7 @@ body {
     margin: 5px 0;
   }
   
+  .detailsbutton{
+    /* font-size: 2rem;
+    color: #2ecc71; */
+  }
