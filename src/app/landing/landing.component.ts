@@ -1,57 +1,50 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../service/product.service';
 import { Router } from '@angular/router';
-import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
-export class LandingComponent implements OnInit {
-  abc: any;
-  public getproduct: any[] = [];
-  getAllProduct: any;
-  public popoverTitle:string = 'Popover title';
-  public popoverMessage:string = 'Popover description';
-  public confirmClicked:boolean = false;
-  public cancelClicked:boolean = false;
-
-  
- 
+export class LandingComponent {
+  getproduct: any = [];
 
   constructor(
     private httpClient: HttpClient,
     private productService: ProductService,
-    private router: Router,
-    
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.productService.getAllProduct().subscribe((data:any)=>{
-      console.log(data)
-      this.getproduct=data;
-    })
+    this.getAllProduct();
   }
 
-  goToProduct(pid:any){
+  private getAllProduct(){
+    this.productService.getAllProduct().subscribe(data => {
+      console.log(data);
+      this.getproduct = data;
+    });
+  }
+
+  goToProduct(pid: any): void {
     this.router.navigate(["detail/" + pid]);
   }
 
-  searchText: string = ''; 
+  searchText: string = '';
 
-  onSearchTextEntered(searchValue: string){
-    this.searchText=searchValue; 
-    console.log( this.searchText);
-    
+  onSearchTextEntered(searchValue: string): void {
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
-  deleteProduct(pid: number) {
-    console.log(pid); // Check if the correct PID is being passed
+  deleteProduct(pid: number): void {
+    console.log(pid); 
     this.productService.deleteProduct(pid).subscribe((res) => {
-      console.log(res); // Verify the response from the delete operation
-      this.getAllProduct(); // Corrected method name
+      console.log(res); 
+      this.getAllProduct(); 
     });
   }
 }
