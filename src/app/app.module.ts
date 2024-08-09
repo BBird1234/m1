@@ -30,6 +30,11 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { MappageComponent } from './mappage/mappage.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,9 +43,12 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     NavbarComponent,
     ProductDetailsComponent,
     LandingComponent,
+    MappageComponent,
+ 
   ],
   imports: [
     BrowserModule,
+    GoogleMapsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

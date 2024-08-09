@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg nav">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="fa-brands fa-rebel"></i>bbirds</a>
+      <a class="navbar-brand" href="#"><i class="fa-brands fa-rebel"></i>mechapp</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,27 +9,22 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="register"><i class="fa-solid fa-file-lines"></i> Register Product</a>
           </li>
+        
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="enteredSearchValue"  [ngModelOptions]="{standalone: true}" (input)="onSearchTextChanged()">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <!-- <label class="switch">
+          <input checked type="checkbox" />
+          <span class="slider round icon" ></span>
+        </label> -->
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="isChecked" (change)="togglePage($event)" />
+          <span class="slider round icon"></span>
+        </label>
       </div>
     </div>
   </nav>
-  <!-- <div class="lists">
-    <section id="testimonials">
-  
-        <div class="mp">
-        <i class="fa-solid fa-mobile-retro"></i><br>
-          <em> Mobile Phones</em></div><div class="fashion">
-        <i class="fa-solid fa-shirt"></i><br>
-         <em> Fashion</em></div><div class="electronics">
-        <i class="fa-solid fa-lightbulb"></i><br>
-          <em> Electronics</em></div><div class="furniture">
-        <i class="fa-solid fa-couch"></i><br>
-          <em> Furniture</em></div><div class="cars">
-        <i class="fa-solid fa-car-side"></i><br>
-          <em> Cars</em>
-        </div> -->
+
     

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,19 +8,31 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    // Set initial state based on the current route
+    this.isChecked = this.router.url === '/mappage'; // Updated this line
   }
-  enteredSearchValue: string ='';
-  //this a property that is bind with the seacrh input. So whatever text is inputted is assign to this property.
+
+  enteredSearchValue: string = '';
+  isChecked: boolean = false;
 
   @Output()
-  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();//instantiate
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  onSearchTextChanged(){
+  onSearchTextChanged() {
+    this.searchTextChanged.emit(this.enteredSearchValue);
+  }
 
-    this.searchTextChanged.emit(this.enteredSearchValue)
-    //this detects changes in text inputted into the search bar
+  togglePage(event: Event) {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    setTimeout(() => {
+      if (isChecked) {
+        this.router.navigate(['/mappage']); // Updated this line
+      } else {
+        this.router.navigate(['/']);
+      }
+    }, 300); // Delay to allow animation to complete
   }
 }

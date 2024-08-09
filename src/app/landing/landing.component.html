@@ -1,28 +1,73 @@
-    <div class="content">
-      <app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
-      <div class="background"></div>
-      <div class="background-texture"></div>
-      <section class="carousel">
-       <div class="carousel__container">
-        <ng-container *ngFor="let a of getproduct "> 
-          <div class="carousel-item" *ngIf="searchText==='' || a.pname.toLowerCase().includes(searchText)">
-            
-               
-              <img class="carousel-item__img" [src]="a.image" >
-               
-              <div class="carousel-item__details">
-                <div class="controls">
-                  <span class="detailsbutton" (click)="goToProduct(a.pid)">🛒</span>
-                 
-                </div>
-                <h5 class="carousel-item__details--title">{{a.pname}}</h5>
-                <h6 class="carousel-item__details--subtitle">GH₵: {{a.pcoin}}.00, {{a.pcity}}</h6>
-              </div>
-            </div> 
-         
-          </ng-container> </div>
-          
-   </section> </div>
-  
+ <app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
+      
+ <div class="ag-format-container">
+    <div class="ag-courses_box">
 
- 
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Automechanic</div>
+          <div class="ag-courses-item_text">For car breakdowns, servicing and oil & filter changes</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">5</span>
+          </div>
+        </a>
+      </div>
+  
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Auto-Electrician</div>
+          <div class="ag-courses-item_text">For electrical related issues</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">7</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Vulcanizer</div>
+          <div class="ag-courses-item_text">For tyre and brake pad repair or change</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">3</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Towing service</div>
+          <div class="ag-courses-item_text">Provision of towing service</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">6</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Sprayer</div>
+          <div class="ag-courses-item_text">For spraying of cars</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">3</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="ag-courses_item">
+        <a href="#" class="ag-courses-item_link">
+          <div class="ag-courses-item_bg"></div>
+          <div class="ag-courses-item_title">Windscreen</div>
+          <div class="ag-courses-item_text">For windscreen and mirror repair or change</div>
+          <div class="ag-courses-item_date-box">Available with 20km:
+            <span class="ag-courses-item_date">3</span>
+          </div>
+        </a>
+      </div>
+  
+    </div>
+  </div>
